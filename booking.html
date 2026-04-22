@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buchen Sie Ihre Ferienwohnung in Seedorf - Einfach und sicher online">
+    <title>Buchung - Madsen Immobilien</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Madsen Immobilien</h1>
+                <p class="tagline">Reethus Birgit</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about-property.html">Das Haus</a></li>
+                <li><a href="about-area.html">Die Gegend</a></li>
+                <li><a href="booking.html" class="active">Buchung</a></li>
+                <li><a href="feedback.html">Bewertungen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h2>Buchung</h2>
+            <p>Reservieren Sie Ihren Aufenthalt bei uns</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container content-section">
+        <h1>Ferienwohnung buchen</h1>
+        
+        <section class="booking-info">
+            <h2>Buchungsformular</h2>
+            <p>Füllen Sie das Formular aus und senden Sie Ihre Buchungsanfrage ab. Wir werden Sie in Kürze kontaktieren.</p>
+        </section>
+
+        <form id="bookingForm" class="booking-form" action="api/booking" method="POST">
+            <div class="form-section">
+                <h3>Persönliche Informationen</h3>
+                
+                <div class="form-group">
+                    <label for="firstName">Vorname *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Nachname *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefon *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Straße und Hausnummer *</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Stadt *</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postleitzahl *</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Land *</label>
+                    <input type="text" id="country" name="country" value="Deutschland" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Buchungsdetails</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkIn">An-/Einreisedatum *</label>
+                        <input type="date" id="checkIn" name="checkIn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Ab-/Abreisedatum *</label>
+                        <input type="date" id="checkOut" name="checkOut" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Anzahl der Gäste *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Bitte wählen</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 Personen</option>
+                            <option value="3">3 Personen</option>
+                            <option value="4">4 Personen</option>
+                            <option value="5">5 Personen</option>
+                            <option value="6">6 Personen</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="children">Kinder (0-12 Jahre)</label>
+                        <select id="children" name="children">
+                            <option value="0">0 Kinder</option>
+                            <option value="1">1 Kind</option>
+                            <option value="2">2 Kinder</option>
+                            <option value="3">3 Kinder</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="crib">Benötigen Sie ein Kinderbett?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="crib" value="yes"> Ja</label>
+                        <label><input type="radio" name="crib" value="no" checked> Nein</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pets">Haustiere</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="pets" value="yes"> Ja</label>
+                        <label><input type="radio" name="pets" value="no" checked> Nein</label>
+                    </div>
+                    <input type="text" id="petDetails" name="petDetails" placeholder="Falls ja, bitte beschreiben Sie:" class="hidden-input">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Zusätzliche Informationen</h3>
+                
+                <div class="form-group">
+                    <label for="specialRequests">Spezielle Wünsche oder Fragen</label>
+                    <textarea id="specialRequests" name="specialRequests" rows="5" placeholder="Teilen Sie uns mit, wenn Sie spezielle Anforderungen haben..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="agreeTerms">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        Ich akzeptiere die <a href="#agb" target="_blank">Allgemeinen Geschäftsbedingungen</a> und <a href="#datenschutz" target="_blank">Datenschutzerklärung</a>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Buchungsanfrage senden</button>
+                <button type="reset" class="btn btn-secondary">Formular zurücksetzen</button>
+            </div>
+
+            <div id="successMessage" class="success-message" style="display:none;">
+                ✓ Vielen Dank! Ihre Buchungsanfrage wurde erfolgreich übermittelt. Wir werden uns in Kürze mit Ihnen in Verbindung setzen.
+            </div>
+            <div id="errorMessage" class="error-message" style="display:none;">
+                ✗ Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.
+            </div>
+        </form>
+
+        <section class="booking-info-box">
+            <h2>Wichtige Informationen</h2>
+            <div class="info-box">
+                <h3>📋 Buchungsprozess</h3>
+                <ol>
+                    <li>Füllen Sie das Buchungsformular aus</li>
+                    <li>Wir prüfen die Verfügbarkeit und kontaktieren Sie</li>
+                    <li>Bestätigung und Zahlungsdetails folgen per E-Mail</li>
+                    <li>Nach Zahlung erhalten Sie die Bestätigung</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h3>💰 Preise & Zahlungsbedingungen</h3>
+                <ul>
+                    <li><strong>Hauptsaison:</strong> EUR 180,00 pro Tag</li>
+                    <li><strong>Nebensaison:</strong> EUR 120,00 pro Tag</li>
+                    <li><strong>Zahlungsarten:</strong> Banküberweisung, PayPal</li>
+                    <li><strong>Kaution:</strong> Per Anfrage</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>❌ Stornobedingungen</h3>
+                <ul>
+                    <li>Kostenlose Stornierung bis 14 Tage vor Ankunft</li>
+                    <li>50% Rückerstattung bei Stornierung 7-13 Tage vor Ankunft</li>
+                    <li>Keine Rückerstattung bei Stornierung weniger als 7 Tage vor Ankunft</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Weitere Fragen?</h2>
+            <p>Wenn Sie Fragen haben, können Sie uns auch direkt kontaktieren</p>
+            <a href="feedback.html" class="btn btn-secondary">Kontakt/Feedback</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Bosauer Straße 12<br>23823 Seedorf<br>Deutschland</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="about-property.html">Das Haus</a></li>
+                        <li><a href="about-area.html">Die Gegend</a></li>
+                        <li><a href="booking.html">Buchung</a></li>
+                        <li><a href="feedback.html">Bewertungen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informationen</h4>
+                    <ul>
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutz</a></li>
+                        <li><a href="#agb">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Madsen Immobilien. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

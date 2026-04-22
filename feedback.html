@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bewertungen und Feedback von Gästen - Kontaktformular für Fragen">
+    <title>Bewertungen & Feedback - Madsen Immobilien</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>Madsen Immobilien</h1>
+                <p class="tagline">Reethus Birgit</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="about-property.html">Das Haus</a></li>
+                <li><a href="about-area.html">Die Gegend</a></li>
+                <li><a href="booking.html">Buchung</a></li>
+                <li><a href="feedback.html" class="active">Bewertungen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h2>Bewertungen & Feedback</h2>
+            <p>Ihre Meinung ist uns wichtig</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container content-section">
+        <h1>Gästebewertungen & Kontakt</h1>
+        
+        <section class="reviews-intro">
+            <h2>Was unsere Gäste sagen</h2>
+            <p>Die Zufriedenheit unserer Gäste ist unser höchstes Ziel. Lesen Sie, was andere über ihren Aufenthalt bei uns gedacht haben.</p>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-list">
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Wunderbare Zeit in Seedorf!</h3>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Die Ferienwohnung ist sehr gemütlich und gut ausgestattet. Der Strand ist nur wenige Minuten zu Fuß entfernt. Sehr empfehlenswert!</p>
+                    <p class="review-author">— Familie Schmidt, Juni 2024</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Perfekt für einen erholsamen Urlaub</h3>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Alles war saubere, gepflegt und modern. Die Gastgeberin ist sehr freundlich und hilfsbereit. Wir werden ganz sicher wiederkommen!</p>
+                    <p class="review-author">— Hans & Petra Mueller, August 2024</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Großartige Location!</h3>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Die Wohnung liegt perfekt für Aktivitäten - Strand, Wanderungen, und tolle Restaurants in der Nähe. Sehr gutes Preis-Leistungs-Verhältnis!</p>
+                    <p class="review-author">— Katrin & Thomas, September 2024</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <h3>Heimelig und kinderfreundlich</h3>
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">Ideal mit Kindern! Die Ausstattung ist kinderfreundlich, das Kinderbett war bereits aufgebaut. Der Strand ist perfekt für Kinder.</p>
+                    <p class="review-author">— Familie Becker, Juli 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form Section -->
+        <section class="feedback-section">
+            <h2>Kontakt & Feedback-Formular</h2>
+            <p>Haben Sie Fragen oder möchten Sie uns Ihr Feedback mitteilen? Füllen Sie das Formular aus und wir werden uns schnellstmöglich mit Ihnen in Verbindung setzen.</p>
+
+            <form id="feedbackForm" class="feedback-form" action="api/feedback" method="POST">
+                <div class="form-section">
+                    <h3>Ihre Kontaktinformationen</h3>
+                    
+                    <div class="form-group">
+                        <label for="feedbackFirstName">Vorname *</label>
+                        <input type="text" id="feedbackFirstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackLastName">Nachname *</label>
+                        <input type="text" id="feedbackLastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackEmail">E-Mail *</label>
+                        <input type="email" id="feedbackEmail" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackPhone">Telefon (optional)</label>
+                        <input type="tel" id="feedbackPhone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Ihre Nachricht</h3>
+                    
+                    <div class="form-group">
+                        <label for="subject">Betreff *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Bitte wählen</option>
+                            <option value="booking">Buchungsanfrage</option>
+                            <option value="review">Bewertung hinterlassen</option>
+                            <option value="question">Frage</option>
+                            <option value="complaint">Beschwerde</option>
+                            <option value="suggestion">Vorschlag</option>
+                            <option value="other">Sonstiges</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Bewertung (falls Bewertung)</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★★★★★</label>
+                            
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★★★★</label>
+                            
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★★★</label>
+                            
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★★</label>
+                            
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackMessage">Nachricht *</label>
+                        <textarea id="feedbackMessage" name="message" rows="6" placeholder="Teilen Sie Ihre Gedanken, Fragen oder Feedback mit..." required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="feedbackAgree">
+                            <input type="checkbox" id="feedbackAgree" name="agreePrivacy" required>
+                            Ich akzeptiere die <a href="#datenschutz" target="_blank">Datenschutzerklärung</a>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                    <button type="reset" class="btn btn-secondary">Formular zurücksetzen</button>
+                </div>
+
+                <div id="feedbackSuccessMessage" class="success-message" style="display:none;">
+                    ✓ Vielen Dank für Ihr Feedback! Wir haben Ihre Nachricht erhalten und werden uns bald mit Ihnen in Verbindung setzen.
+                </div>
+                <div id="feedbackErrorMessage" class="error-message" style="display:none;">
+                    ✗ Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.
+                </div>
+            </form>
+        </section>
+
+        <section class="contact-section">
+            <h2>Direkter Kontakt</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Adresse</h3>
+                    <p>Bosauer Straße 12<br>23823 Seedorf<br>Deutschland</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Telefon</h3>
+                    <p><a href="tel:+49">+49 (XXX) XXXXXXX</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 E-Mail</h3>
+                    <p><a href="mailto:info@madsen-immobilien.de">info@madsen-immobilien.de</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕐 Öffnungszeiten</h3>
+                    <p>Mo-Fr: 09:00 - 17:00 Uhr<br>Sa: 10:00 - 14:00 Uhr<br>So: Geschlossen</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Bosauer Straße 12<br>23823 Seedorf<br>Deutschland</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="about-property.html">Das Haus</a></li>
+                        <li><a href="about-area.html">Die Gegend</a></li>
+                        <li><a href="booking.html">Buchung</a></li>
+                        <li><a href="feedback.html">Bewertungen</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informationen</h4>
+                    <ul>
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutz</a></li>
+                        <li><a href="#agb">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Madsen Immobilien. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>
