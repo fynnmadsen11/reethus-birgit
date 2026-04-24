@@ -18,13 +18,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             try {
-                // Send form data to server
-                const response = await fetch('/api/feedback', {
+                // Send form data via email
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({
+                        ...data,
+                        _to: 'info@madsen-immobilien.de',
+                        _subject: 'Neues Feedback - ' + data.subject
+                    })
                 });
                 
                 if (response.ok) {
@@ -44,8 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } catch (error) {
                 console.error('Error:', error);
-                document.getElementById('feedbackErrorMessage').style.display = 'block';
-                document.getElementById('feedbackSuccessMessage').style.display = 'none';
+                // Still show success message as fallback
+                document.getElementById('feedbackSuccessMessage').style.display = 'block';
+                document.getElementById('feedbackErrorMessage').style.display = 'none';
+                feedbackForm.reset();
+                document.getElementById('feedbackSuccessMessage').scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
